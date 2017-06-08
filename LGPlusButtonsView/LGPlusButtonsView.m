@@ -747,10 +747,14 @@ typedef NS_ENUM(NSUInteger, LGPlusButtonDescriptionsPosition)
     [self setNeedsLayout];
 }
 
-- (void)setDescriptionsTextColor:(UIColor *)textColor
+- (void)setDescriptionsTextColor:(NSUInteger)index textColor:(UIColor *)textColor forState:(UIControlState)state
 {
-    for (LGPlusButtonDescription *description in _descriptionsArray)
-        description.textColor = textColor;
+    //_buttonsArray[index] setTitleColor:textColor forState:UIControlStateNormal];
+    
+    ((LGPlusButtonDescription *)_descriptionsArray[index]).textColor = textColor;
+    
+//    for (LGPlusButtonDescription *description in _descriptionsArray)
+//        description.textColor = textColor;
 }
 
 - (void)setDescriptionsBackgroundColor:(UIColor *)backgroundColor
@@ -1850,7 +1854,7 @@ typedef NS_ENUM(NSUInteger, LGPlusButtonDescriptionsPosition)
     else if (type == LGPlusButtonAnimationTypeRotate)
     {
         CGAffineTransform transform = CGAffineTransformIdentity;
-        transform = CGAffineTransformConcat(transform, CGAffineTransformMakeRotation(kLGPlusButtonsViewDegreesToRadians(45)));
+        transform = CGAffineTransformConcat(transform, CGAffineTransformMakeRotation(kLGPlusButtonsViewDegreesToRadians(-45)));
 
         if (animated)
         {
