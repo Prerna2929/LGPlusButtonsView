@@ -30,7 +30,7 @@
 #import "LGPlusButtonsView.h"
 #import "LGPlusButton.h"
 #import "LGPlusButtonDescription.h"
-#import "LGPlusButtonsViewShared.h"
+#import "LGPlusButtonsViewShared.h" 
 
 #define kLGPlusButtonsViewDegreesToRadians(d)     ((d) * M_PI / 180)
 #define kLGPlusButtonsViewAssertionWarning(value) [NSString stringWithFormat:@"Number of buttons needs to be equal to numbers of %@", value]
